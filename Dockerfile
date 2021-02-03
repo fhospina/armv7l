@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:jessie
+FROM fhospina/rpi-node-armv7
 
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
@@ -21,7 +21,7 @@ RUN set -ex \
   done
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 9.1.0
+ENV NODE_VERSION 15.8.0
 ENV NODE_ARCH armv7l
 
 RUN buildDeps='xz-utils' \
